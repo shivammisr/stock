@@ -1,0 +1,110 @@
+
+
+<app-page-layout>
+    <!-- Header -->
+    <div class="container mt-4">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="page-title">Dashboard</h1>
+          </div>
+        </div>
+</div>  
+    <div class="dashboard-container main">
+
+        <!-- <div class="cards-container">
+            <mat-card class="stock-card">
+              <mat-card-header>
+                <mat-card-title>Total Value</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <h3>{{ totalStockValue | currency }}</h3>
+              </mat-card-content>
+            </mat-card>
+        
+            <mat-card class="stock-card">
+              <mat-card-header>
+                <mat-card-title>Market Cap</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <h3>{{ marketCap | currency }}</h3>
+              </mat-card-content>
+            </mat-card>
+        
+            <mat-card class="stock-card">
+              <mat-card-header>
+                <mat-card-title>Stocks Owned</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <h3>{{ totalStocksOwned }}</h3>
+              </mat-card-content>
+            </mat-card>
+          </div>
+         -->
+        <div class="stock-table-container">
+            <!-- Search Input -->
+            <mat-form-field appearance="fill" class="search-bar">
+                <mat-label>Filter by Symbol or Company</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Search">
+            </mat-form-field>
+
+            <!-- Data Table -->
+            <table mat-table [dataSource]="dataSource" matSort >
+
+                <!-- Stock Symbol Column -->
+                <ng-container matColumnDef="stockSymbol">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Symbol </th>
+                    <td mat-cell *matCellDef="let stock"> {{ stock.stockSymbol }} </td>
+                </ng-container>
+
+                <!-- Company Name Column -->
+                <ng-container matColumnDef="companyName">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Company Name </th>
+                    <td mat-cell *matCellDef="let stock"> {{ stock.companyName }} </td>
+                </ng-container>
+
+                <!-- Current Price Column -->
+                <ng-container matColumnDef="currentPrice">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Current Price </th>
+                    <td mat-cell *matCellDef="let stock"> ${{ stock.currentPrice }} </td>
+                </ng-container>
+
+                <!-- Current Price Column -->
+                <ng-container matColumnDef="marketCap">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Market Capitalization </th>
+                    <td mat-cell *matCellDef="let stock"> ${{ stock.marketCap }} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef> Actions </th>
+                    <td mat-cell *matCellDef="let stock">
+                        <!-- <div class="gap">
+                            <button mat-flat-button color="primary"
+                                (click)="openTransactionDialog(stock, 'Buy')">Buy</button>
+                            <button mat-flat-button color="accent"
+                                (click)="openTransactionDialog(stock, 'Sell')">Sell</button>
+                        </div> -->
+                        <button mat-icon-button [matMenuTriggerFor]="menu">
+                            <mat-icon >more_vert</mat-icon>
+                          </button>
+                          <mat-menu #menu="matMenu">
+                            <button mat-menu-item (click)="openTransactionDialog(stock, 'Buy')">Buy</button>
+                            <button mat-menu-item (click)="openTransactionDialog(stock, 'Sell')">Sell</button>
+                          </mat-menu>
+
+                    </td>
+                </ng-container>
+
+                <!-- Header and Row Definitions -->
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                aria-label="Select page of periodic elements">
+            </mat-paginator>
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+</app-page-layout>

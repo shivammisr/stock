@@ -1,0 +1,21 @@
+<!-- <div class=""> -->
+<h2 mat-dialog-title>Stock Transaction</h2>
+<form [formGroup]="data.form" (ngSubmit)="onSubmit()">
+    <mat-dialog-content>
+        <mat-form-field appearance="fill">
+            <mat-label>Number of Shares</mat-label>
+            <input matInput formControlName="numberOfShares" type="number" required />
+            <mat-error *ngIf="data.form.get('numberOfShares')?.hasError('required')">Please enter a number</mat-error>
+            <mat-error *ngIf="data.form.get('numberOfShares')?.hasError('min')">Must be a positive number</mat-error>
+        </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <div class="gap">
+            <button mat-flat-button (click)="onNoClick()">Cancel</button>
+            <button type="submit" [disabled]="data.form.invalid"  mat-flat-button  [color]="data?.button === 'Buy'? 'primary' : 'accent'">{{data?.button}}</button>
+        </div>
+
+    </mat-dialog-actions>
+</form>
+
+<!-- </div> -->

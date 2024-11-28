@@ -1,0 +1,86 @@
+/* .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  .login-card {
+    width: 400px;
+    padding: 20px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .actions {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  } */
+
+
+  body {
+    background-color: #f8f9fa; /* Light background */
+  }
+  
+  .card {
+    background: #ffffff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-label {
+    font-weight: 500;
+  }
+  
+  .form-control {
+    height: 50px;
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+  }
+  
+  .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .text-danger {
+    font-size: 0.875rem;
+  }
+  
+  .text-muted {
+    font-size: 0.9rem;
+  }
+  
+  input::placeholder {
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+  
+  button:disabled {
+    background-color: #b2d4f8;
+    cursor: not-allowed;
+  }
+  
+
+  /* Error Message Alignment */
+.error-message {
+  font-size: 0.875rem; /* Smaller text for error messages */
+  color: #dc3545; /* Bootstrap danger color */
+  margin-left: 2.5rem; /* Align error with input field start */
+}

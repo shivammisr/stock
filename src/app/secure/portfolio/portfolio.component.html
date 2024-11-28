@@ -1,0 +1,80 @@
+<app-page-layout>
+
+  <div class="">
+    <!-- Page Title and Breadcrumb -->
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="page-title">User Portfolio</h1>
+        </div>
+      </div>
+
+      <!-- Breadcrumb Navigation -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">User Portfolio</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="stock-table-container">
+
+
+      <div class="portfolio-container">
+        <mat-card class="portfolio-card">
+          <mat-card-header>
+            <mat-card-title>Stock Portfolio</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+      <mat-table [dataSource]="dataSource">
+
+
+        <ng-container matColumnDef="stockSymbol">
+          <mat-header-cell *matHeaderCellDef> Stock Symbol </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{ element?.stockSymbol }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="totalQuantity">
+          <mat-header-cell *matHeaderCellDef> Total Quantity </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{ element?.totalQuantity }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="averagePrice">
+          <mat-header-cell *matHeaderCellDef> Average Price </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{ element?.averagePrice | currency }} </mat-cell>
+        </ng-container>
+
+        
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+          </mat-card-content>
+        </mat-card>
+    
+        <mat-card class="chart-card" >
+          <mat-card-header>
+            <mat-card-title>Stock Performance Chart</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div style="display: flex; justify-content: center; gap: 10px;">
+              <div style="width: 600px; height: 400px;">
+                <canvas id="myChart"></canvas>
+              </div>
+  
+              <div style="width: 600px; height: 400px;">
+                <canvas id="portfolioChart"></canvas>
+              </div>
+            </div>
+
+            
+          </mat-card-content>
+        </mat-card>
+      </div>
+      
+    </div>
+
+  </div>
+
+</app-page-layout>

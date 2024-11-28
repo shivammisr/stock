@@ -1,0 +1,247 @@
+<!-- <div class="login-container">
+<mat-card class="login-card">
+    <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" type="email" required />
+                <mat-error *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+                  Please enter a valid email.
+                </mat-error>
+              </mat-form-field>
+      
+              <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" type="password" required />
+                <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                  Password is required.
+                </mat-error>
+              </mat-form-field>
+      
+              <div class="actions">
+                <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">
+                  Login
+                </button>
+                <button mat-raised-button color="primary" type="button"  routerLink="/auth/registration">
+                  Sign Up
+                </button>
+              </div>
+        </form>
+    </mat-card-content>
+
+</mat-card>
+
+</div> -->
+
+<!-- 
+<div class="login-page">
+  <div class="container">
+    <div class="row justify-content-center align-items-center vh-100">
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow-lg border-0">
+          <div class="card-header text-center bg-primary text-white">
+            <h3>Welcome Back!</h3>
+            <p>Please login to your account</p>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+              <div class="form-group mb-3">
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="fas fa-user"></i>
+                </span>
+                <input
+                  type="text"
+                  formControlName="email"
+                  class="form-control"
+                  placeholder="Enter your email"
+                />
+              </div>
+              <div *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].invalid"  class="form-text text-danger mt-1">
+                <small >email is required.</small>
+              </div>
+              </div>
+              <div class="form-group mb-3">
+                <div class="input-group">
+                  <span class="input-group-text">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                  <input
+                    type="password"
+                    id="password"
+                    formControlName="password"
+                    class="form-control"
+                    placeholder="Enter your password"
+                  />
+                </div>
+                <div
+                  *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].invalid"
+                  class="form-text text-danger mt-1"
+                >
+                  <small >Password is required.</small>
+                </div>
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary w-100"
+                [disabled]="loginForm.invalid"
+              >
+                Login
+              </button>
+            </form>
+          </div>
+          <div class="card-footer text-center">
+            <small class="text-muted">
+              Don't have an account? 
+              <a routerLink="/auth/registration" class="text-primary">Sign up</a>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- <div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+  <div class="card shadow-lg border-0 rounded-3 p-4" style="width: 400px;">
+    <h3 class="text-center text-primary mb-2">Welcome Back!</h3>
+    <p class="text-center text-muted">Please login to your account</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+
+      <div class="form-group mb-3">
+        <div class="input-group">
+          <span class="input-group-text bg-light">
+            <i class="fas fa-user text-primary"></i>
+          </span>
+          <input
+            type="email"
+            formControlName="email"
+            class="form-control"
+            placeholder="Enter your email"
+          />
+        </div>
+        <div
+          *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].invalid"
+          class="form-text text-danger mt-1"
+        >
+          Email is required.
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <div class="input-group">
+          <span class="input-group-text bg-light">
+            <i class="fas fa-lock text-primary"></i>
+          </span>
+          <input
+            type="password"
+            formControlName="password"
+            class="form-control"
+            placeholder="Enter your password"
+          />
+        </div>
+        <div
+          *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].invalid"
+          class="form-text text-danger mt-1"
+        >
+          Password is required.
+        </div>
+      </div>
+
+
+      <button
+        type="submit"
+        class="btn btn-primary w-100 fw-bold"
+        [disabled]="loginForm.invalid"
+      >
+        Login
+      </button>
+    </form>
+
+
+    <div class="text-center mt-3">
+      <p class="text-muted mb-0">
+        Don’t have an account?
+        <a href="#" class="text-primary text-decoration-none">Sign up</a>
+      </p>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+  <div class="card shadow-lg border-0 rounded-3 p-4" style="width: 400px;">
+    <h3 class="text-center text-primary mb-2">Welcome Back!</h3>
+    <p class="text-center text-muted">Please login to your account</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <!-- Email Input -->
+      <div class="form-group mb-3">
+        <label for="email" class="form-label visually-hidden">Email</label>
+        <div class="input-group">
+          <span class="input-group-text bg-light">
+            <i class="fas fa-user text-primary"></i>
+          </span>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            class="form-control"
+            placeholder="Enter your email"
+          />
+        </div>
+        <div
+          *ngIf="loginForm.controls['email'].touched && loginForm.controls['email'].invalid"
+          class="error-message mt-1"
+        >
+          Email is required.
+        </div>
+      </div>
+
+      <!-- Password Input -->
+      <div class="form-group mb-3">
+        <label for="password" class="form-label visually-hidden">Password</label>
+        <div class="input-group">
+          <span class="input-group-text bg-light">
+            <i class="fas fa-lock text-primary"></i>
+          </span>
+          <input
+            type="password"
+            id="password"
+            formControlName="password"
+            class="form-control"
+            placeholder="Enter your password"
+          />
+        </div>
+        <div
+          *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].invalid"
+          class="error-message mt-1"
+        >
+          Password is required.
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="btn btn-primary w-100 fw-bold"
+        [disabled]="loginForm.invalid"
+      >
+        Login
+      </button>
+    </form>
+
+    <!-- Footer -->
+    <div class="text-center mt-3">
+      <p class="text-muted mb-0">
+        Don’t have an account?
+        <a routerLink="/auth/registration" class="text-primary text-decoration-none">Sign up</a>
+      </p>
+    </div>
+  </div>
+</div>
