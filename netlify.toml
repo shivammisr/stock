@@ -1,12 +1,12 @@
-[build]
-  command = "npm install --force && npm run build"
-  publish = "D:/angular/stock-angular/stock/dist/stock/browser"
-
-# Remove the following functions section entirely if you're not using any functions:
- [functions]
-   directory = "D:/angular/stock-angular/stock/netlify/functions"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  [build]
+    command = "npm install --force && npm run build"
+    publish = "D:/angular/stock-angular/stock/dist/stock/browser"
+  functionsDirectory = "D:/angular/stock-angular/stock/netlify/functions"
+  [[plugins]]
+      origin = "default"
+      package = '@netlify/angular-runtime'
+  [redirects]
+      from = "/*"
+      status = 200
+      to = "/index.html"
+  redirectsOrigin = "config"
