@@ -9,9 +9,10 @@ import { User } from '../../shared/models/user.model';
 import { updateUser } from '../../shared/store/user/user.action';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrl: './profile.component.css'
+    selector: 'app-profile',
+    templateUrl: './profile.component.html',
+    styleUrl: './profile.component.css',
+    standalone: false
 })
 export class ProfileComponent implements OnInit {
   defaultAvatar = 'assets/image/user.png'; // Placeholder image

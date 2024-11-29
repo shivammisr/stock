@@ -9,9 +9,10 @@ import { Observable } from 'rxjs';
 import { Stock } from '../../shared/models/stock.model';
 import { Store } from '@ngrx/store';
 @Component({
-  selector: 'app-portfolio',
-  templateUrl: './portfolio.component.html',
-  styleUrl: './portfolio.component.css'
+    selector: 'app-portfolio',
+    templateUrl: './portfolio.component.html',
+    styleUrl: './portfolio.component.css',
+    standalone: false
 })
 export class PortfolioComponent implements AfterViewInit, OnDestroy {
   displayedColumns: string[] = ['stockSymbol', 'totalQuantity', 'averagePrice',];

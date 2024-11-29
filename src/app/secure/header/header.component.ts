@@ -10,9 +10,10 @@ import { setUser } from '../../shared/store/user/user.action';
 // import { state } from '@angular/animations';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.css',
+    standalone: false
 })
 export class HeaderComponent implements OnInit {
   @Input() userName: string = ''; // Replace with dynamic data

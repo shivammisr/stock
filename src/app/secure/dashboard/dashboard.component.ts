@@ -16,9 +16,10 @@ import { MatPaginator } from '@angular/material/paginator';
 import {  setStockData } from '../../shared/store/stock/stock.action';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+    selector: 'app-dashboard',
+    templateUrl: './dashboard.component.html',
+    styleUrl: './dashboard.component.css',
+    standalone: false
 })
 export class DashboardComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['stockSymbol', 'companyName', 'currentPrice', 'marketCap' ,'actions'];

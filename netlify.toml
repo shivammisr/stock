@@ -1,6 +1,10 @@
 [build]
   command = "npm install --force && npm run build"
-  publish = "dist/stock"
+  publish = "D:/angular/stock-angular/stock/dist/stock/browser"
+
+# Remove the following functions section entirely if you're not using any functions:
+ [functions]
+   directory = "D:/angular/stock-angular/stock/netlify/functions"
 
 [[redirects]]
   from = "/*"

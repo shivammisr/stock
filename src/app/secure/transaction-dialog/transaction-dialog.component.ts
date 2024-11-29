@@ -5,9 +5,10 @@ import { Stock } from '../../shared/models/stock.model';
 import { CommunicationService } from '../../service/communication.service';
 import { stockApi } from '../../shared/constants/api-endpoints/stock-api';
 @Component({
-  selector: 'app-transaction-dialog',
-  templateUrl: './transaction-dialog.component.html',
-  styleUrl: './transaction-dialog.component.css'
+    selector: 'app-transaction-dialog',
+    templateUrl: './transaction-dialog.component.html',
+    styleUrl: './transaction-dialog.component.css',
+    standalone: false
 })
 export class TransactionDialogComponent {
   constructor(

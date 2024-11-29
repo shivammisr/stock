@@ -5,9 +5,10 @@ import { User } from './shared/models/user.model';
 import { AuthService } from './service/auth.service';
 import { userAPI } from './shared/constants/api-endpoints/user-api';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css',
+    standalone: false
 })
 export class AppComponent {
   title = 'stock';
