@@ -1,12 +1,4 @@
-  [build]
-    command = "npm install --force && npm run build"
-    publish = "D:/angular/stock-angular/stock/dist/stock/browser"
-  functionsDirectory = "D:/angular/stock-angular/stock/netlify/functions"
-  [[plugins]]
-      origin = "default"
-      package = '@netlify/angular-runtime'
-  [redirects]
-      from = "/*"
-      status = 200
-      to = "/index.html"
-  redirectsOrigin = "config"
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api"
+  status = 200

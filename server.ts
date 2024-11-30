@@ -4,7 +4,8 @@ import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import AppServerModule from './src/main.server';
-
+// const { createProxyMiddleware } = require('http-proxy-middleware');
+import {createProxyMiddleware} from 'http-proxy-middleware'
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
@@ -17,13 +18,24 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
 
+
+  server.use(
+    '/api',
+    createProxyMiddleware({
+      target: 'https://percient-interview-apis.onrender.com', // Replace with your API URL
+      changeOrigin: true,
+      pathRewrite: { '^/api': '' }, // Remove `/api` prefix when forwarding
+    })
+  );
+  
   // Example Express Rest API endpoints
-  // server.get('/api/**', (req, res) => { });
+  server.get('/api/**', (req, res) => { });
   // Serve static files from /browser
   server.get('**', express.static(browserDistFolder, {
     maxAge: '1y',
     index: 'index.html',
   }));
+
 
   // All regular routes use the Angular engine
   server.get('**', (req, res, next) => {

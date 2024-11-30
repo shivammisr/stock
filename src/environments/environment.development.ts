@@ -1,6 +1,6 @@
 export const environment = {
-        production: true,
-        apiUrl: '/auth',
-        userUrl: '/users',
-        stocksUrl: '/stocks'
+        production: false,
+        apiUrl: '/api/auth',
+        userUrl: '/api/users',
+        stocksUrl: '/api/stocks'
 };

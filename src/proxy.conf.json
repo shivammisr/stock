@@ -1,21 +1,18 @@
 {
     "/auth": {
       "target": "https://percient-interview-apis.onrender.com",
-      "pathRewrite": { "^/auth": "" },
       "secure": false,
       "changeOrigin": true,
       "logLevel": "debug"
     },
     "/users": {
       "target": "https://percient-interview-apis.onrender.com",
-      "pathRewrite": { "^/users": "" },
       "secure": false,
       "changeOrigin": true,
       "logLevel": "debug"
     },
     "/stocks": {
       "target": "https://percient-interview-apis.onrender.com",
-      "pathRewrite": { "^/stocks": "" },
       "secure": false,
       "changeOrigin": true,
       "logLevel": "debug"
