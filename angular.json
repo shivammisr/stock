@@ -64,7 +64,14 @@
                   "maximumError": "4kB"
                 }
               ],
-              "outputHashing": "all"
+              
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.development.ts",
+                  "with": "src/environments/environment.ts"
+                }
+              ]
             },
             "development": {
               "optimization": false,
@@ -88,10 +95,12 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "stock:build:production"
+              "buildTarget": "stock:build:production",
+               "proxyConfig": "src/proxy.conf.json"
             },
             "development": {
-              "buildTarget": "stock:build:development"
+              "buildTarget": "stock:build:development",
+               "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
